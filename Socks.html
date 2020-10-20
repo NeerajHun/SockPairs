@@ -1,0 +1,42 @@
+<html>
+    <head><title>SHOCKS PAIRS</title></head>
+    <body>
+        <script>
+            function PairCount(ar){
+                var totals = {};
+                for (var i = 0; i < ar.length; i++) {
+                    var num = ar[i];
+                    if (totals[num] === undefined) {
+                        totals[num] = 0;
+                    }
+                    
+                        
+                        totals[num] = totals[num] + 1;
+                     
+        
+                }
+    
+                var pairs = 0;
+                for (var prop in totals) {
+                    if (totals.hasOwnProperty(prop)) {
+                        var numSocks = totals[prop];
+                        pairs += Math.floor(numSocks/2);
+                    }
+                }
+                return pairs
+            }
+            var N = parseInt(prompt())
+            var sock = []
+            for(i=0;i<N;i++)
+            {
+                var item= parseInt(prompt())
+                sock.push(item)
+            }
+
+            res=PairCount(sock)
+            document.write(res)
+    
+        </script>
+      
+    </body>
+</html>
